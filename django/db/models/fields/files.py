@@ -88,7 +88,7 @@ class FieldFile(File):
 
     def save(self, name, content, save=True):
         name = self.field.generate_filename(self.instance, name)
-        self.name = self.storage.save(name, content, max_length=self.field.max_length)
+        self.name = self.storage.save(name, content, max_length=None)
         setattr(self.instance, self.field.name, self.name)
         self._committed = True
 
