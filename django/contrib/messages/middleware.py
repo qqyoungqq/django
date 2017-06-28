@@ -22,6 +22,6 @@ class MessageMiddleware(MiddlewareMixin):
         # messages storage, so make no assumption that it will be there.
         if hasattr(request, '_messages'):
             unstored_messages = request._messages.update(response)
-            if unstored_messages and settings.DEBUG:
-                raise ValueError('Not all temporary messages could be stored.')
+            #if unstored_messages and settings.DEBUG:
+            #    raise ValueError('Not all temporary messages could be stored.')
         return response
